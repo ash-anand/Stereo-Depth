@@ -5,13 +5,14 @@
 #include "opencv2/calib3d/calib3d.hpp"
 #include "opencv2/contrib/contrib.hpp"
 #include "opencv2/core/core.hpp"
+#include <stdlib.h>
 
 using namespace std;
 using namespace cv;
 
 int main(int argc, char* argv[]){
-	VideoCapture left(0);
-	VideoCapture right(2);
+	VideoCapture left(atoi(argv[1]));
+	VideoCapture right(atoi(argv[2]));
 	Mat img_l, img_r, disp;
 	StereoBM sbm;
 	Mat g1,g2;
